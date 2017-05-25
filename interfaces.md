@@ -4,7 +4,7 @@ http://119.29.132.18:3030
 
 ## 管理员账号密码
 usr: admin
-psd: ADMINadmin
+psd: 大写加小写
 
 ## 与后台绑定文档名称
 /index.html - 主页
