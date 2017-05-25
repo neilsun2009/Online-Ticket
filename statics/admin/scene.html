@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scene - Admin</title>
+</head>
+<body>
+    Add scene:
+    <form name="add_scene" action="../api/add_scene" method="POST">
+        Movie Title: <input name="movietitle" value="加勒比海盗5"><br/>
+        Movie Id: <input name="movieid" value="592597fa19cd0876e7415486"><br/>
+        Time: <input type="time" name="time"><br/>
+        Seat: <input type="number" name="seat" value="250"><br/>
+        Price: <input type="number" name="price" value="37"><br/>
+        <input type="submit" value="ADD">
+    </form>
+    <hr/>
+    Update scene:
+    <form name="update_scene" action="../api/update_scene" method="POST">
+        Scene Id: <input name="sceneid" value="5926b08b197dae32bb2e2a4d"><br/>
+        Movie Title: <input name="movietitle" value="加勒比海盗5"><br/>
+        Movie Id: <input name="movieid" value="592597fa19cd0876e7415486"><br/>
+        Time: <input type="time" name="time"><br/>
+        Seat: <input type="number" name="seat" value="250"><br/>
+        Remain: <input type="number" name="remain" value="200"><br/>
+        Price: <input type="number" name="price" value="37"><br/>
+        <input type="submit" value="UPDATE">
+    </form>
+    <hr/>
+    Delete scene:
+    <form name="delete_scene" action="../api/delete_scene" method="POST">
+        Scene ID: <input name="sceneid" value="5926b08b197dae32bb2e2a4d"><br/>
+        <input type="submit" value="DELETE">
+    </form>
+</body>
+</html>

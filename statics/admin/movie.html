@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie - Admin</title>
+</head>
+<body>
+    Add movie:
+    <form name="add_movie">
+        Title: <input name="title"><br/>
+        Length: <input type="number" name="leng" value="90"><br/>
+        Poster: <input name="poster"><br/>
+        Rotten Potato: <input type="range" min="1" max="5" name="rotten" value="3"><br/>
+        IMDB: <input type="range" min="1" max="5" name="imdb" value="3"><br/>
+        Douban: <input type="range" min="1" max="5" name="douban" value="3"><br/>
+        <input type="button" id="add_btn" value="ADD">
+    </form>
+    <hr/>
+    Update movie:
+    <form name="update_movie">
+        Movie ID: <input name="movieid" value="592597fa19cd0876e7415486"><br/>
+        Title: <input name="title"><br/>
+        Length: <input type="number" name="leng" value="90"><br/>
+        Poster: <input name="poster"><br/>
+        Rotten Potato: <input type="range" min="1" max="5" name="rotten" value="3"><br/>
+        IMDB: <input type="range" min="1" max="5" name="imdb" value="3"><br/>
+        Douban: <input type="range" min="1" max="5" name="douban" value="3"><br/>
+        <input type="button" id="update_btn" value="UPDATE">
+    </form>
+    <hr/>
+    Delete movie:
+    <form name="delete_movie" action="../api/delete_movie" method="POST">
+        Movie ID: <input name="movieid" value="592597fa19cd0876e7415486"><br/>
+        <input type="submit" value="DELETE">
+    </form>
+    <script>
+        var xhr = new XMLHttpRequest(),
+                form,
+                data,
+                addBtn = document.getElementById('add_btn'),
+                updateBtn = document.getElementById('update_btn');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                    console.log(xhr.responseText);
+                } else {
+                    console.log('Error ' + xhr.status);
+                }
+            }
+        };
+        addBtn.addEventListener('click', function() {
+            xhr.open('post', '../api/add_movie', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            form = document.forms['add_movie'];
+            console.log(form);
+            data = {};
+            data.title = form.elements['title'].value;
+            data.length = form.elements['leng'].value;
+            data.poster = form.elements['poster'].value;
+            data.ratings = [{source: 'Rotten Potato', rating: form.elements['rotten'].value},
+                {source: 'IMDB', rating: form.elements['imdb'].value},
+                {source: 'Douban', rating: form.elements['douban'].value}];
+            console.log(data);
+            xhr.send(JSON.stringify(data));
+        });
+        updateBtn.addEventListener('click', function() {
+            xhr.open('post', '../api/update_movie', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            form = document.forms['update_movie'];
+            console.log(form);
+            data = {};
+            data.movieid = form.elements['movieid'].value;
+            data.title = form.elements['title'].value;
+            data.length = form.elements['leng'].value;
+            data.poster = form.elements['poster'].value;
+            data.ratings = [{source: 'Rotten Potato', rating: form.elements['rotten'].value},
+                {source: 'IMDB', rating: form.elements['imdb'].value},
+                {source: 'Douban', rating: form.elements['douban'].value}];
+            console.log(data);
+            xhr.send(JSON.stringify(data));
+        });
+
+    </script>
+</body>
+</html>
