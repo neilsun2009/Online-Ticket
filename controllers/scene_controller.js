@@ -160,7 +160,11 @@ exports.buyTicket = function(req, res) {
     // requires logged in
     if (!req.session.user) {
         req.session.msg = 'Please login to proceed.';
-        res.redirect('/login');
+        res.json({
+            message: 'no user logged in',
+            data: null,
+            result: false
+        });
     } else {
         Scene.findOne({_id: req.body.sceneid})
             .exec(function(err, scene) {

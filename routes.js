@@ -6,6 +6,13 @@ module.exports = function(app) {
     var users = require('./controllers/user_controller'),
         movies = require('./controllers/movie_controller'),
         scenes = require('./controllers/scene_controller');
+    app.all('*', function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+        res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+        res.header("X-Powered-By",' 3.2.1');
+        next();
+    });
     app.use('/', express.static('./statics'));
     app.get('/', function(req, res) {
         // console.log(req);
