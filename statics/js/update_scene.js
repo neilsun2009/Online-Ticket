@@ -31,7 +31,7 @@
             if (json.result) {
                 insertHTML(json, scenesContainer);
                 bindUpdateEventListener(json);
-                binddeleteEventListener(json);
+                bindDeleteEventListener(json);
             } else {
                 alert(json.message);
             }
@@ -77,10 +77,11 @@ function handleSubmit(addSceneForm, id, title, cancel) {
     postData.seat = addSceneForm.seat.value;
     postData.movieid = id;
     postData.movietitle = title;
-    postData = JSON.parse(JSON.stringify(postData));
+    postData = JSON.stringify(postData);
 
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open('POST', 'http://119.29.132.18:3030/api/add_scene');
+    xmlHttp.setRequestHeader('Content-Type', 'application/json');
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
             json = JSON.parse(xmlHttp.responseText);
@@ -117,7 +118,7 @@ function bindUpdateEventListener(json) {
     }
 }
 
-function binddeleteEventListener(json) {
+function bindDeleteEventListener(json) {
     var buttons = document.getElementsByClassName('delete'),
         i;
 
@@ -144,10 +145,11 @@ function handleUpdate(index, json, form) {
     postData.seat = form.seat.value;
     postData.remain = form.remain.value;
 
-    postData = JSON.parse(JSON.stringify(postData));
+    postData = JSON.stringify(postData);
 
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open('POST', 'http://119.29.132.18:3030/api/update_scene');
+    xmlHttp.setRequestHeader('Content-Type', 'application/json');
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
             resData = JSON.parse(xmlHttp.responseText);
@@ -167,8 +169,10 @@ function handleDelete(id, form) {
         'sceneid': id
     };
 
+    postData = JSON.stringify(postData);
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open('POST', 'http://119.29.132.18:3030/api/delete_scene');
+    xmlHttp.setRequestHeader('Content-Type', 'application/json');
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
             resData = JSON.parse(xmlHttp.responseText);

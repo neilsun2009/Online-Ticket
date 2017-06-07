@@ -16,7 +16,7 @@
             }
         }
     };
-    xmlHttp.send(json);
+    xmlHttp.send();
 })();
 
 function insertHTML(json, container) {
@@ -56,17 +56,18 @@ function deletePost(index, movieid) {
         'movieid': movieid
     };
 
-    postData = JSON.parse(JSON.stringify(postData));
+    postData = JSON.stringify(postData);
 
     var xml = new XMLHttpRequest();
     xml.open("POST", "http://119.29.132.18:3030/api/delete_movie");
+    xml.setRequestHeader('Content-Type', 'application/json');
     xml.onreadystatechange = function() {
         if (xml.readyState == 4 && (xml.status === 200 || xml.status === 304)) {
-            // var json = JSON.parse(xml.responseText);
-            if (xml.responseText.result) {
+            var json = JSON.parse(xml.responseText);
+            if (json.result) {
                 window.location.reload();
             } else {
-                alert(xml.responseText);
+                alert(json.message);
             }
         }
     };

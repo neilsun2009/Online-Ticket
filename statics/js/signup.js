@@ -33,8 +33,8 @@
 
         json.username = buttons[0].value;
         json.password = buttons[1].value;
-        json = JSON.parse(JSON.stringify(json));
-        console.log(json);
+        json = JSON.stringify(json);
+        // console.log(json);
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open("POST", 'http://119.29.132.18:3030/api/signup');
         xmlHttp.setRequestHeader('Content-Type', 'application/json');
@@ -49,6 +49,6 @@
                 }
             }
         };
-        xmlHttp.send(JSON.stringify(json));
+        xmlHttp.send(json);
     }
 })();
