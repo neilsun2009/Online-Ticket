@@ -63,7 +63,7 @@ function handleAddRating(ratings) {
             '来源：<input class="fr" type="text" name="source">' +
             '<br>' +
             '<br>' +
-            '评分：<input class="fr" type="text" name="rating">' +
+            '评分：<input class="fr" type="number" name="rating">' +
             '<br>' +
             '<br>' +
             '<input type="button" class="fr delete-button" name="delete" value="删除">'

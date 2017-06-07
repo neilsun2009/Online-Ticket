@@ -46,16 +46,16 @@ function insertHTML(json, scenesContainer) {
 
     for (i = 0; i < json.scenes.length; i++) {
         html += '<form class="form clear-f">' +
-                '时间：<input class="fr" type="text" name="time" value="' + json.scenes[i].time + '">' +
+                '时间：<input class="fr" type="time" name="time" value="' + json.scenes[i].time + '">' +
                 '<br>' +
                 '<br>' +
-                '价格：<input class="fr" type="text" name="price" value="' + json.scenes[i].price + '">' +
+                '价格：<input class="fr" type="number" name="price" value="' + json.scenes[i].price + '">' +
                 '<br>' +
                 '<br>' +
-                '座位：<input class="fr" type="text" name="seat" value="' + json.scenes[i].seat + '">' +
+                '座位：<input class="fr" type="number" name="seat" value="' + json.scenes[i].seat + '">' +
                 '<br>' +
                 '<br>' +
-                '剩余座位：<input class="fr" type="text" name="remain" value="' + json.scenes[i].remain + '">' +
+                '剩余座位：<input class="fr" type="number" name="remain" value="' + json.scenes[i].remain + '">' +
                 '<input class="fr update" type="button" value="更新">' +
                 '<input class="fr delete" type="button" value="删除">' +
                 '</form>';

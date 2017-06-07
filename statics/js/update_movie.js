@@ -49,7 +49,7 @@ function insertHTML(json, info, oldRatings) {
                 '电影名字：<input class="fr" type="text" name="title" value="' + json.data.title + '">' +
                 '<br>' +
                 '<br>' +
-                '时长：<input class="fr" type="text" name="length" value="' + json.data.length + '">' +
+                '时长：<input class="fr" type="number" name="length" value="' + json.data.length + '">' +
                 '<br>' +
                 '<br>' +
                 '海报URL：<input class="fr" type="text" name="poster" value="' + json.data.poster + '">' +
@@ -62,7 +62,7 @@ function insertHTML(json, info, oldRatings) {
                 '来源：<input class="fr" type="text" name="source" value="' + json.data.ratings[i].source + '">' +
                 '<br>' +
                 '<br>' +
-                '评分：<input class="fr" type="text" name="rating" value="' + json.data.ratings[i].rating + '">' +
+                '评分：<input class="fr" type="number" name="rating" value="' + json.data.ratings[i].rating + '">' +
                 '<br>' +
                 '<br>' +
                 '<input class="fr delete-button" type="button" value="删除">' +
@@ -121,7 +121,7 @@ function handleAddRating(ratings) {
             '来源：<input class="fr" type="text" name="source">' +
             '<br>' +
             '<br>' +
-            '评分：<input class="fr" type="text" name="rating">' +
+            '评分：<input class="fr" type="number" name="rating">' +
             '<br>' +
             '<br>' +
             '<input type="button" class="fr delete-button" name="delete" value="删除">'
