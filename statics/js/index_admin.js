@@ -23,15 +23,15 @@ function insertHTML(json, container) {
     var html = '', i;
     for (i = 0; i < json.count; i++) {
         html += '<div class="movie">' +
-            '<a href="' + '/detail.html?movieid=' + json.data[i]._id +
+            '<a href="' + './movie.html?movieid=' + json.data[i]._id +
             '"><img class="fl movie-img" src="' + json.data[i].poster + '" alt="' + json.data[i].title + '"></a>' +
             '<div class="fl info">' +
-            '<a href="' + '/detail.html?movieid=' + json.data[i]._id + '"><p class="title">' + json.data[i].title + '</p></a>' +
+            '<a href="' + './movie.html?movieid=' + json.data[i]._id + '"><p class="title">' + json.data[i].title + '</p></a>' +
             '<p>时长:' + json.data[i].length + '分钟' + '</p>' +
             '</div>' +
             '<div class="fr">' +
             '<input type="button" value="删除">' +
-            '<a href="/update_movie.html&movieid=' + json.data[i]._id + '">更新</a>' +
+            '<a href="./movie.html?movieid=' + json.data[i]._id + '">更新</a>' +
             '</div>' +
             '</div>';
     }

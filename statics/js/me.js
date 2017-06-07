@@ -4,7 +4,7 @@
     var json;
 
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", 'http://119.29.132.18:3030/api/movie?movieid=' + movieid[1]);
+    xmlHttp.open("GET", 'http://119.29.132.18:3030/api/user');
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
             json = JSON.parse(xmlHttp.responseText);

@@ -43,7 +43,7 @@
                 var responseText = JSON.parse(xmlHttp.responseText);
                 if (responseText.result) {
                     alert(responseText.message);
-                    
+                    window.location.href = '/';
                 } else {
                     alert('该账户已被注册！！！');
                 }
