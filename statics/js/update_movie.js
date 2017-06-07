@@ -116,18 +116,21 @@ function handleSubmit(forms, id) {
 
 function handleAddRating(ratings) {
     var html = '';
+    var form = document.createElement('form');
+    form.className = 'form clear-f';
 
-    html += '<form class="form clear-f">' +
-            '来源：<input class="fr" type="text" name="source">' +
+    // html += '<form class="form clear-f">' +
+    html += '来源：<input class="fr" type="text" name="source">' +
             '<br>' +
             '<br>' +
             '评分：<input class="fr" type="number" name="rating">' +
             '<br>' +
             '<br>' +
-            '<input type="button" class="fr delete-button" name="delete" value="删除">'
-            '</form>';
+            '<input type="button" class="fr delete-button" name="delete" value="删除">';
+            // '</form>';
 
-    ratings.innerHTML += html;
+    form.innerHTML = html;
+    ratings.appendChild(form);
 
     bindEventListener();
 }
