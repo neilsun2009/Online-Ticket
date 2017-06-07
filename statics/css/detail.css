@@ -1,0 +1,78 @@
+.movie {
+    margin: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 290px;
+}
+
+.movie-img {
+    width: 200px;
+    height: 280px;
+}
+
+.info {
+    margin-left: 20px;
+}
+
+.info p {
+    margin: 10px 0;
+}
+
+.title {
+    font-size: 34px;
+
+    color: blue;
+}
+
+.score-list {
+    margin: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.score-list li {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 0 20px;
+
+    text-align: center;
+    list-style: none;
+
+    background-color: #e5e5e5;
+}
+
+.score-list li p:first-child {
+    font-size: 26px;
+
+    color: blue;
+}
+
+.time-list {
+    margin: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.time {
+    margin: 10px;
+    height: 100px;
+
+    line-height: 100px;
+
+    background-color: #e5e5e5;
+}
+
+.time span {
+    margin: 0 10px;
+
+    font-size: 30px;
+
+    color: red;
+}
+
+.time input {
+    margin: 40px 10px 0 0;
+    width: 20px;
+    height: 20px;
+}
+
+.buy-container {
+    margin: 20px;
+}

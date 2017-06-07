@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/public.css">
 </head>
 <body>
-    ADMIN LOGIN
-    <form action="./api/login_admin" method="POST">
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <input type="submit" value="admin login">
+    <form class="container clear-f" action="/api/login_admin" method="post">
+        用户名：
+        <input type="text" name="username" required="required" pattern="^[a-zA-Z0-9_]{3,16}$" value="admin">
+        <br>
+        <br>
+        密码：
+        <input type="password" name="password" placeholder="输入密码" required="required" pattern="^[a-zA-Z\d_]{6,}$">
+        <br>
+        <br>
+        <input type="submit" name="submit" value="登录">
     </form>
 </body>
 </html>

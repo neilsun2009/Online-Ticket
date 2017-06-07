@@ -1,0 +1,29 @@
+.movie-info {
+    margin: 20px;
+    border-bottom: 1px solid gray;
+
+    text-align: center;
+}
+
+.info {
+    overflow-x: hidden;
+
+    width: 300px;
+}
+
+.info p {
+    font-size: 20px;
+    text-align: center;
+
+    color: blue;
+}
+
+.info p:first-child {
+    font-size: 26px;
+}
+
+.time {
+    font-size: 76px;
+    
+    color: red;
+}

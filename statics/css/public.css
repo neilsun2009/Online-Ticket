@@ -1,0 +1,53 @@
+html, body {
+    width: 100%;
+
+    font-family: "微软雅黑";
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear-f {
+    zoom: 1;
+}
+
+.clear-f:after {
+    clear: both;
+    display: block;
+    content: '.';
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.fix {
+    margin: 0 auto;
+    width: 960px;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.vertical-line {
+    margin: 0 10px;
+
+    width: 1px;
+    height: 20px;
+}
+
+.logo {
+    margin-left: 20px;
+
+    font-family: "华文彩云" !important;
+    font-size: 48px;
+}
+
+.bread {
+    margin: 20px 20px 0 0;
+}

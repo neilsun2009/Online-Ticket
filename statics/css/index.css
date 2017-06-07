@@ -1,0 +1,26 @@
+.movie {
+    margin: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 190px;
+}
+
+.movie-img {
+    width: 120px;
+    height: 180px;
+}
+
+.info {
+    margin-left: 20px;
+}
+
+.info p {
+    margin: 10px 0;
+}
+
+.title {
+    font-size: 26px;
+}
+
+input {
+    margin-right: 10px;
+}

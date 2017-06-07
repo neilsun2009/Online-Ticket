@@ -1,0 +1,14 @@
+input[type="button"] {
+    margin: 15px;
+}
+
+.form {
+    margin: 20px auto;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 270px;
+}
+
+.add-scene {
+    display: none;
+}

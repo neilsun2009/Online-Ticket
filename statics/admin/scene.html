@@ -2,35 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Scene - Admin</title>
+    <title>scene</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/update_scene.css">
 </head>
 <body>
-    Add scene:
-    <form name="add_scene" action="../api/add_scene" method="POST">
-        Movie Title: <input name="movietitle" value="加勒比海盗5"><br/>
-        Movie Id: <input name="movieid" value="592597fa19cd0876e7415486"><br/>
-        Time: <input type="time" name="time"><br/>
-        Seat: <input type="number" name="seat" value="250"><br/>
-        Price: <input type="number" name="price" value="37"><br/>
-        <input type="submit" value="ADD">
-    </form>
-    <hr/>
-    Update scene:
-    <form name="update_scene" action="../api/update_scene" method="POST">
-        Scene Id: <input name="sceneid" value="5926b08b197dae32bb2e2a4d"><br/>
-        Movie Title: <input name="movietitle" value="加勒比海盗5"><br/>
-        Movie Id: <input name="movieid" value="592597fa19cd0876e7415486"><br/>
-        Time: <input type="time" name="time"><br/>
-        Seat: <input type="number" name="seat" value="250"><br/>
-        Remain: <input type="number" name="remain" value="200"><br/>
-        Price: <input type="number" name="price" value="37"><br/>
-        <input type="submit" value="UPDATE">
-    </form>
-    <hr/>
-    Delete scene:
-    <form name="delete_scene" action="../api/delete_scene" method="POST">
-        Scene ID: <input name="sceneid" value="5926b08b197dae32bb2e2a4d"><br/>
-        <input type="submit" value="DELETE">
-    </form>
+    <div class="fix">
+        <div>
+            <span class="logo">JOKER</span>
+            <input id="add-scene" class="fr" type="button" value="增加场次">
+        </div>
+        <hr>
+        <hr>
+        <div id="scenes">
+            <!-- <form class="form clear-f">
+                时间：<input class="fr" type="text" name="time" value="">
+                <br>
+                <br>
+                价格：<input class="fr" type="text" name="price" value="">
+                <br>
+                <br>
+                座位：<input class="fr" type="text" name="seat" value="">
+                <br>
+                <br>
+                剩余座位：<input class="fr" type="text" name="remain" value="">
+                <input class="fr update" type="button" value="更新">
+                <input class="fr delete" type="button" value="删除">
+            </form> -->
+        </div>
+        <form id="add-scene-form" class="form clear-f add-scene">
+            时间：<input class="fr" type="text" name="time" value="">
+            <br>
+            <br>
+            价格：<input class="fr" type="text" name="price" value="">
+            <br>
+            <br>
+            座位：<input class="fr" type="text" name="seat" value="">
+            <input id="add" class="fr" type="button" value="增加">
+            <input id="cancel" class="fr" type="button" value="取消">
+        </form>
+    </div>
+    <script src="../js/update_scene.js"></script>
 </body>
 </html>
