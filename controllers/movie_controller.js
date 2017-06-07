@@ -95,7 +95,7 @@ exports.deleteMovie = function(req, res) {
                             res.json({
                                 message: 'movie deletion succeeded',
                                 data: deletedMovie,
-                                result: false
+                                result: true
                             });
                         }
                     });
