@@ -47,7 +47,7 @@ function handleSubmit(forms) {
         if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
             json = JSON.parse(xmlHttp.responseText);
             if (json.result) {
-                insertHTML(json, container);
+                window.location.href = '/admin/admin.html';
             } else {
                 alert(json.message);
             }
