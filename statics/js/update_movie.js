@@ -36,7 +36,7 @@
                 alert(json.message);
             }
         }
-    }
+    };
     xmlHttp.send();
 })();
 
@@ -96,9 +96,11 @@ function handleSubmit(forms, id) {
     }
 
     postData = JSON.parse(JSON.stringify(postData));
+    // postData = JSON.stringify(postData);
 
     xmlHttp =  new XMLHttpRequest();
     xmlHttp.open('POST', 'http://119.29.132.18:3030/api/update_movie');
+    xmlHttp.setRequestHeader('Content-Type', 'application/json');
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
             json = JSON.parse(xmlHttp.responseText);
@@ -108,8 +110,8 @@ function handleSubmit(forms, id) {
                 alert(json.message);
             }
         }
-    }
-    xmlHttp.send(postData);
+    };
+    xmlHttp.send(JSON.stringify(postData));
     // console.log(postData);
 }
 

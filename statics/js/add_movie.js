@@ -41,6 +41,8 @@ function handleSubmit(forms) {
     // console.log(postData);
     xmlHttp =  new XMLHttpRequest();
     xmlHttp.open('POST', 'http://119.29.132.18:3030/api/add_movie');
+    xmlHttp.setRequestHeader('Content-Type', 'application/json');
+
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
             json = JSON.parse(xmlHttp.responseText);
@@ -50,8 +52,8 @@ function handleSubmit(forms) {
                 alert(json.message);
             }
         }
-    }
-    xmlHttp.send(postData);
+    };
+    xmlHttp.send(JSON.stringify(postData));
 }
 
 function handleAddRating(ratings) {
