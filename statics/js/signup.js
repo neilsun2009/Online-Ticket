@@ -34,19 +34,21 @@
         json.username = buttons[0].value;
         json.password = buttons[1].value;
         json = JSON.parse(JSON.stringify(json));
-
+        console.log(json);
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open("POST", 'http://119.29.132.18:3030/api/signup');
+        xmlHttp.setRequestHeader('Content-Type', 'application/json');
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
                 var responseText = JSON.parse(xmlHttp.responseText);
                 if (responseText.result) {
                     alert(responseText.message);
+                    
                 } else {
                     alert('该账户已被注册！！！');
                 }
             }
         };
-        xmlHttp.send(json);
+        xmlHttp.send(JSON.stringify(json));
     }
 })();

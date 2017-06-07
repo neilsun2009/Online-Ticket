@@ -6,6 +6,7 @@ function hashPW(pwd) {
     return crypto.createHash('sha256').update(pwd).digest('base64').toString();
 }
 exports.signup = function(req, res) {
+    console.log(req.body);
     var user = new User({
         username: req.body.username,
         password: hashPW(req.body.password),
