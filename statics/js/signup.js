@@ -37,7 +37,16 @@
 
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open("POST", 'http://119.29.132.18:3030/api/signup');
-        // xmlHttp.onreadystatechange = function() {}
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
+                var responseText = JSON.parse(xmlHttp.responseText);
+                if (responseText.result) {
+                    alert(responseText.message);
+                } else {
+                    alert('该账户已被注册！！！');
+                }
+            }
+        };
         xmlHttp.send(json);
     }
 })();
