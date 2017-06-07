@@ -16,7 +16,7 @@ exports.addScene = function(req, res) {
             remain: req.body.seat,
             movieid: req.body.movieid,
             movietitle: req.body.movietitle,
-            _movie: req.body.movieid,
+            _movie: req.body.movieid
         });
         scene.save(function(err, scene) {
             if (err) {
@@ -99,7 +99,7 @@ exports.deleteScene = function(req, res) {
                             res.json({
                                 message: 'scene deletion succeeded',
                                 data: deletedScene,
-                                result: false
+                                result: true
                             });
                         }
                     });
