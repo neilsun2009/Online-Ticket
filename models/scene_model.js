@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
         seat: {type: Number, required: true},
         remain: {type: Number, required: true},
         movieid: {type: Schema.Types.ObjectId, required: true},
-        movietitle: {type: String, required: true}
+        movietitle: {type: String, required: true},
+        _movie: {type: Schema.Types.ObjectId, ref: 'Movie'}
     }, {collection: 'scenes'});
 mongoose.model('Scene', SceneSchema);

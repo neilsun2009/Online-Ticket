@@ -85,7 +85,8 @@ psd: 大写加小写
 		seat: Number,
 		remain: Number,
 		movieid: String,
-		movietitle: String
+		movietitle: String,
+		_movie: Movie // 详细电影数据
 	}],
 	result: true
 }

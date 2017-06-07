@@ -15,7 +15,8 @@ exports.addScene = function(req, res) {
             seat: req.body.seat,
             remain: req.body.seat,
             movieid: req.body.movieid,
-            movietitle: req.body.movietitle
+            movietitle: req.body.movietitle,
+            _movie: req.body.movieid,
         });
         scene.save(function(err, scene) {
             if (err) {
@@ -115,6 +116,7 @@ exports.deleteScene = function(req, res) {
 // using id get one scene
 exports.getScene = function(req, res) {
     Scene.findOne({_id: req.query.sceneid})
+        // .populate('_movie')
         .exec(function(err, scene) {
             if (scene) {
                 res.json({
@@ -137,6 +139,7 @@ exports.getScenes = function(req, res) {
     // console.log(req.query);
     queryCount.exec(function(err, count) {
         var query = Scene.find();
+        // query.populate('_movie').exec(function(err, scenes) {
         query.exec(function(err, scenes) {
             if (scenes) {
                 res.json({
