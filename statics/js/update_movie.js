@@ -105,7 +105,7 @@ function handleSubmit(forms, id) {
             json = JSON.parse(xmlHttp.responseText);
             if (json.result) {
                 // insertHTML(json, container);
-                wondow.location.reload();
+                window.location.reload();
             } else {
                 alert(json.message);
             }

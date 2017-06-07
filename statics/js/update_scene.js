@@ -86,7 +86,8 @@ function handleSubmit(addSceneForm, id, title, cancel) {
         if (xmlHttp.readyState == 4 && (xmlHttp.status === 200 || xmlHttp.status === 304)) {
             json = JSON.parse(xmlHttp.responseText);
             if (json.result) {
-                cancel.click();
+                // cancel.click();
+                window.location.reload();
             } else {
                 alert(json.message);
             }
@@ -141,7 +142,7 @@ function handleUpdate(index, json, form) {
     postData.movietitle = json.data.title;
     postData.sceneid = json.scenes[index]._id;
     postData.time = form.time.value;
-    postData.price = form.price.vlaue;
+    postData.price = form.price.value;
     postData.seat = form.seat.value;
     postData.remain = form.remain.value;
 
@@ -155,7 +156,8 @@ function handleUpdate(index, json, form) {
             resData = JSON.parse(xmlHttp.responseText);
             if (resData.result) {
                 alert(resData.message);
-                form.style.display = 'none';
+                // form.style.display = 'none';
+                window.location.reload();
             } else {
                 alert(resData.message);
             }
@@ -178,7 +180,8 @@ function handleDelete(id, form) {
             resData = JSON.parse(xmlHttp.responseText);
             if (resData.result) {
                 alert(resData.message);
-                form.style.display = 'none';
+                // form.style.display = 'none';
+                window.location.reload();
             } else {
                 alert(resData.message);
             }

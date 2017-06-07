@@ -97,7 +97,7 @@ function postHandle(json) {
             'num': num
         };
 
-        postData = JSON.parse(JSON.stringify(postData));
+        postData = JSON.stringify(postData);
         var xml = new XMLHttpRequest();
         xml.open("POST", 'http://119.29.132.18:3030/api/buy_ticket');
         xml.setRequestHeader('Content-Type', 'application/json');

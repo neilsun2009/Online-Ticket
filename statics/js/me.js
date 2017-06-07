@@ -26,10 +26,10 @@ function insertHTML(json, container) {
         html += '<div class="movie-info clear-f">' +
             '<div class="fl info">' +
             '<p>' + json.scenes[i].movietitle + '</p>' +
-            '<p>' + json.data.scenes[i].num + '</p>'
-            '</div>'
-            '<span class="time">12:45</span>'
-        '</div>'
+            '<p>' + json.data.scenes[i].num + '</p>' +
+            '</div>' +
+            '<span class="time">' + json.scenes[i].time + '</span>' +
+            '</div>';
     }
 
     container.innerHTML += html;
