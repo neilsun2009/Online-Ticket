@@ -14,11 +14,21 @@ exports.signup = function(req, res) {
     user.save(function(err) {
         if (err) {
             req.session.msg = err;
-            res.redirect('/signup');
+            // res.redirect('/signup');
+            res.json({
+                message: 'username already exist',
+                data: null,
+                result: false
+            });
         } else {
             req.session.user = user._id;
             req.session.msg = 'Authenticated as ' + user.username;
-            res.redirect('/');
+            // res.redirect('/');
+            res.json({
+                message: 'user signed up successfully',
+                data: null,
+                result: true
+            });
         }
     });
 };
